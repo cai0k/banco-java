@@ -1,13 +1,10 @@
+import java.util.Scanner;
 public class ContaBancaria{
     private String numero;
     private double saldo;
     
-    
-    public ContaBancaria(String numero, double saldo){
-        this.saldo = saldo;
-        this.numero = numero;
-    }
-    
+    Scanner sc = new Scanner(System.in);
+
     public String getNumero(){
         return numero;
     }
@@ -27,22 +24,26 @@ public class ContaBancaria{
         this.saldo = saldo;
     }
 
-    public void Debitar(){
-         this.setSaldo(50);
+    public double Debitar(){
          this.setNumero("35");
+         System.out.println("Digite o seu saldo: ");
+         double saldo = sc.nextDouble();
          if(saldo < 35){
              System.out.println("Saldo Insufuciente!!");
          }else{
             saldo = saldo - 35;
-            System.out.println("Transção Aprovada! O saldo atual e de: " +saldo);
+            System.out.println("Transacao aprovada! seu saldo atual e de: "+saldo);
          }
+        return saldo;
         
         }
-    public void Creditar(){
-        this.setSaldo(20);
+    public double Creditar(){
         this.setNumero("35");
+        System.out.println("Digite o seu saldo: ");
+        double saldo = sc.nextDouble();
         saldo = saldo + 35;
-        System.out.println("O saldo atual e de: " +saldo);
+        System.out.println("Seu saldo atual e de: "+saldo);
+        return saldo;
         
     }
   
